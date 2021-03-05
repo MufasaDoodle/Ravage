@@ -7,8 +7,18 @@ public class ItemSpawner : MonoBehaviour, Interactible
     public GameObject itemToSpawn;
     public Transform location;
 
+    public int cost = 100;
+
     public void PerformAction()
     {
-        Instantiate(itemToSpawn, location.position, Quaternion.identity);
+        if(cost < 0)
+        {
+            return;
+        }
+
+        if (Player.Instance.EconomyController.SpendMoney(cost))
+        {
+            Instantiate(itemToSpawn, location.position, Quaternion.identity);
+        }
     }
 }

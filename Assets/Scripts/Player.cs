@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     public GunController GunController { get; private set; }
     public InteractController InteractController { get; private set; }
+    public EconomyController EconomyController { get; private set; }
 
     public int startingHealth = 100;
 
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
         Instance = this;
         GunController = GetComponent<GunController>();
         InteractController = GetComponent<InteractController>();
+        EconomyController = GetComponent<EconomyController>();
     }
 
     void Start()

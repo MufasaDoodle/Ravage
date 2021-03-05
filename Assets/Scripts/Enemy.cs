@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
+            Player.Instance.EconomyController.GiveMoney(100);
             Die();
         }
     }
