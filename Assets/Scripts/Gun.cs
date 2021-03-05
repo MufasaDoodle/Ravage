@@ -102,9 +102,14 @@ public class Gun : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             var target = hit.transform.GetComponent<Target>();
+            var enemy = hit.transform.GetComponent<Enemy>();
             if (target != null)
             {
                 target.TakeDamage(damage);
+            }
+            else if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
             }
 
             if (hit.rigidbody != null)

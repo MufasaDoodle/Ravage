@@ -40,7 +40,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<Target>().isDead)
+        if (GetComponent<Enemy>().isDead)
         {
             navAgent.SetDestination(transform.position);
             return;
